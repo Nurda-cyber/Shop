@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Көлік Онлайн Дүкені</title>
-    <link rel="stylesheet" href="/Style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <header>
@@ -17,8 +17,11 @@
         </ul>
     </nav>
     <div class="auth-buttons">
-        <a href="/Login" class="btn">Кіру</a>
-        <a href="/Register" class="btn">Тіркелу</a>
+        <!-- Егер пайдаланушы кірсе, "Профиль" батырмасы көрсетіледі -->
+        <a th:if="${user != null}" href="/Profile" class="btn">Профиль</a>
+        <a th:if="${user == null}" href="/Login" class="btn">Кіру</a>
+        <a th:if="${user == null}" href="/Register" class="btn">Тіркелу</a>
+        <a th:if="${user != null}" href="/Login" class="btn logout">Шығу</a>
     </div>
 </header>
 
@@ -27,21 +30,6 @@
         <h2>Қош келдіңіз!</h2>
         <p>Біздің онлайн дүкенде қалаған көлігіңізді тауып, оңай сатып алыңыз.</p>
         <a href="/vehicles" class="btn">Көліктерді қарау</a>
-    </section>
-    <section class="features">
-        <h3>Негізгі ерекшеліктер:</h3>
-        <div class="feature">
-            <h4>Кең таңдаулы көліктер</h4>
-            <p>Жаңа және қолданылған көліктердің үлкен базасы.</p>
-        </div>
-        <div class="feature">
-            <h4>Қолайлы бағалар</h4>
-            <p>Барлығына сәйкес келетін икемді баға.</p>
-        </div>
-        <div class="feature">
-            <h4>Тапсырыс жасау</h4>
-            <p>Көліктерді онлайн таңдап, үйден шықпай-ақ сатып алыңыз.</p>
-        </div>
     </section>
 </main>
 

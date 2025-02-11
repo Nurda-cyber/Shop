@@ -2,28 +2,23 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Кіру</title>
-    <link rel="stylesheet" href="/Style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <div class="form-container">
     <h2>Кіру</h2>
-    <form action="/login" method="post">
+    <form action="/Login" method="post">
         <div class="form-group">
-            <label for="username">Пайдаланушы аты:</label>
-            <input type="text" id="username" name="username" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
             <label for="password">Құпия сөз:</label>
             <input type="password" id="password" name="password" required>
         </div>
         <button type="submit" class="btn">Кіру</button>
-        <p>Тіркелу қажет пе? <a href="/Registration">Тіркелу</a></p>
+        <p>Тіркелу қажет пе? <a href="/Register">Тіркелу</a></p>
     </form>
-
-    <!-- Қайту батырмасы -->
-    <div class="back-button">
-        <a href="Home" class="btn">Басты бетке оралу</a>
-    </div>
 </div>
 </body>
 </html>
